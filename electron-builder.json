@@ -1,0 +1,33 @@
+{
+    "appId": "com.autocommit.desktop",
+    "productName": "Auto Commit",
+    "directories": {
+        "output": "release",
+        "buildResources": "assets"
+    },
+    "files": [
+        "dist/**/*",
+        "electron/**/*",
+        "assets/**/*",
+        "package.json"
+    ],
+    "win": {
+        "target": "nsis",
+        "icon": "assets/icon.png"
+    },
+    "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "createDesktopShortcut": true,
+        "createStartMenuShortcut": true,
+        "shortcutName": "Auto Commit"
+    },
+    "mac": {
+        "target": "dmg",
+        "icon": "assets/icon.icns"
+    },
+    "linux": {
+        "target": "AppImage",
+        "icon": "assets/icon.png"
+    }
+}

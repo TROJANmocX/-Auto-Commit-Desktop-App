@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-carbon-border;
+  }
+
+  body {
+    @apply bg-carbon-bg text-carbon-text font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #root {
+    @apply w-screen h-screen;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-carbon-bg;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-carbon-text-secondary rounded;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-carbon-text;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply w-full px-3 py-2 bg-carbon-bg border border-carbon-border rounded 
+           text-carbon-text text-sm focus:outline-none focus:border-carbon-accent
+           transition-colors duration-150;
+  }
+
+  .input-field:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Button styles */
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-carbon-bg;
+  }
+
+  .btn-primary {
+    @apply btn bg-carbon-accent text-carbon-bg hover:bg-carbon-accent/90
+           focus:ring-carbon-accent;
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply btn bg-carbon-panel text-carbon-text border border-carbon-border
+           hover:bg-carbon-border focus:ring-carbon-text-secondary;
+  }
+
+  .btn-danger {
+    @apply btn bg-carbon-danger text-white hover:bg-carbon-danger/90
+           focus:ring-carbon-danger;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-carbon-panel rounded-lg border border-carbon-border;
+  }
+
+  /* Section styles */
+  .section {
+    @apply space-y-3;
+  }
+
+  .section-title {
+    @apply text-sm font-semibold text-carbon-text uppercase tracking-wide;
+  }
+
+  /* Checkbox styles */
+  .checkbox {
+    @apply w-4 h-4 bg-carbon-bg border-carbon-border rounded
+           text-carbon-accent focus:ring-carbon-accent focus:ring-offset-carbon-panel
+           cursor-pointer;
+  }
+
+  /* Radio styles */
+  .radio {
+    @apply w-4 h-4 bg-carbon-bg border-carbon-border
+           text-carbon-accent focus:ring-carbon-accent focus:ring-offset-carbon-panel
+           cursor-pointer;
+  }
+
+  /* Status dot */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-dot.idle {
+    @apply bg-carbon-text-secondary;
+  }
+
+  .status-dot.running {
+    @apply bg-carbon-accent animate-pulse-slow;
+  }
+
+  .status-dot.error {
+    @apply bg-carbon-danger animate-pulse;
+  }
+
+  /* Validation checkmark */
+  .checkmark {
+    @apply text-carbon-accent text-sm;
+  }
+
+  /* Log entry */
+  .log-entry {
+    @apply font-mono text-xs text-carbon-text-secondary;
+  }
+
+  .log-entry .timestamp {
+    @apply text-carbon-accent;
+  }
+
+  /* Heatmap cell */
+  .heatmap-cell {
+    @apply w-3 h-3 rounded-sm transition-colors duration-150;
+  }
+
+  .heatmap-cell.level-0 {
+    @apply bg-carbon-border;
+  }
+
+  .heatmap-cell.level-1 {
+    @apply bg-carbon-accent/20;
+  }
+
+  .heatmap-cell.level-2 {
+    @apply bg-carbon-accent/40;
+  }
+
+  .heatmap-cell.level-3 {
+    @apply bg-carbon-accent/60;
+  }
+
+  .heatmap-cell.level-4 {
+    @apply bg-carbon-accent;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-2 py-1 text-xs bg-carbon-panel border border-carbon-border
+           rounded shadow-lg pointer-events-none whitespace-nowrap;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply w-full h-2 bg-carbon-border rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-carbon-accent transition-all duration-300 ease-out;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50 
+           flex items-center justify-center animate-fade-in;
+  }
+
+  .modal-content {
+    @apply bg-carbon-panel border border-carbon-border rounded-lg
+           shadow-2xl max-w-md w-full mx-4 animate-fade-in;
+  }
+
+  /* Glow effect on hover */
+  .glow-on-hover {
+    @apply transition-shadow duration-150;
+  }
+
+  .glow-on-hover:hover {
+    @apply shadow-lg shadow-carbon-accent/20;
+  }
+}
+
+@layer utilities {
+  .text-mono {
+    @apply font-mono;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+}

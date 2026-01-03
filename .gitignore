@@ -1,0 +1,7 @@
+
+# Build Cache
+.builder-cache/
+dist/
+release/
+node_modules/
+.DS_Store
