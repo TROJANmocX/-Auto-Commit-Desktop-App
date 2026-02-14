@@ -1,3 +1,5 @@
+import { generateSeed } from "@/lib/prng.js";
+
 export default function TimingSection({
     timeWindow,
     onTimeWindowChange,

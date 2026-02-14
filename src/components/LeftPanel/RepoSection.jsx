@@ -3,7 +3,9 @@ export default function RepoSection({
     onRepoPathChange,
     validation,
     onBrowse,
-    disabled
+    disabled,
+    onAnalyze,
+    analysis
 }) {
     return (
         <div className="section">
